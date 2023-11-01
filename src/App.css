@@ -1,38 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Lobster&family=Oswald:wght@300&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #d7e7d8;
+}
+:root {
+  --uni-margin: 10vw;
+  --inside-padding: 10px;
+  --bg-color: #d7e7d8;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 1180px;
+  margin-inline: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  background-color: aqua;
+  background-image: url("./components/asset\ 32.png");
+  background-repeat: repeat-x;
+  background-size: 300px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: var(--inside-padding);
+  font-family: poppins;
+}
+h2 {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: medium;
+  color: rgba(1, 20, 22, 0.667);
+}
+
+/* forms */
+.Form {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+.Name {
+  border-radius: 5px;
+  background: none;
+  padding: 10px;
+}
+#name {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.634);
+  padding: 5px;
+  margin-left: 0;
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--bg-color);
+  z-index: 1;
+  transition: all 0.3s;
+}
+.form-label {
+  position: absolute;
+  color: #183b56c0;
+  line-height: 40px;
+  top: 0.6rem;
+  left: 1.4rem;
+  z-index: 2;
+  transition: all 0.3s;
+}
+#name:focus {
+  border: 2px solid rgba(0, 0, 0, 1);
+}
+
+#name:focus ~ .form-label {
+  top: -0.7rem;
+  left: -0.2rem;
+  font-size: 25px;
+  background-color: #d7e7d8;
+  opacity: 1;
+  background: solid;
+
+  color: #183b56;
+}
+.Email {
+  border-radius: 5px;
+  background: none;
+  padding: 10px;
+}
+#email {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.634);
+  padding: 5px;
+  margin-left: 0;
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--bg-color);
+  z-index: 1;
+  transition: all 0.3s;
+}
+.form-label2 {
+  position: absolute;
+  color: #183b56c0;
+  line-height: 40px;
+  top: 0.6rem;
+  left: 575px;
+  z-index: 2;
+  transition: all 0.3s;
+}
+#email:focus {
+  border: 2px solid rgba(0, 0, 0, 1);
+}
+
+#email:focus ~ .form-label2 {
+  top: -0.7rem;
+  left: 558px;
+  font-size: 25px;
+  background-color: #d7e7d8;
+  opacity: 1;
+  background: solid;
+
+  color: #183b56;
+}
+
+.btn{
+  padding: 15px;
+  font-size: large;
+  border-radius: 5px;
+  background-color: rgb(15, 165, 20);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  outline: none;
+  border: 1px solid green;
 }
