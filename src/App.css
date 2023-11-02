@@ -26,7 +26,7 @@ body {
 }
 .header {
   display: flex;
-  background-color:var(--bg-color);
+  background-color: var(--bg-color);
   background-image: url("./components/asset\ 32.png");
   background-repeat: repeat-x;
   background-size: 300px;
@@ -35,7 +35,7 @@ body {
   padding: var(--inside-padding);
   font-family: poppins;
 }
-h1{
+h1 {
   color: rgba(0, 0, 0, 0.67);
 }
 h2 {
@@ -50,9 +50,8 @@ h2 {
   margin-top: 20px;
   position: relative;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  
 }
 .Name {
   border-radius: 5px;
@@ -71,6 +70,7 @@ h2 {
   background-color: var(--bg-color);
   z-index: 1;
   transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .form-label {
   position: absolute;
@@ -81,11 +81,13 @@ h2 {
   z-index: 2;
   transition: all 0.3s;
 }
-#name:focus {
+#name:focus,
+#name:valid {
   border: 2px solid rgba(0, 0, 0, 1);
 }
 
-#name:focus ~ .form-label {
+#name:focus ~ .form-label,
+#name:valid ~ .form-label {
   top: -0.7rem;
   left: -0.2rem;
   font-size: 25px;
@@ -112,23 +114,26 @@ h2 {
   background-color: var(--bg-color);
   z-index: 1;
   transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .form-label2 {
   position: absolute;
   color: #183b56c0;
   line-height: 40px;
   top: 0.6rem;
-  left: 575px;
+  left: 582px;
   z-index: 2;
   transition: all 0.3s;
 }
-#email:focus {
+#email:focus,
+#email:valid {
   border: 2px solid rgba(0, 0, 0, 1);
 }
 
-#email:focus ~ .form-label2 {
+#email:focus ~ .form-label2,
+#email:valid ~ .form-label2 {
   top: -0.7rem;
-  left: 558px;
+  left: 563px;
   font-size: 25px;
   background-color: #d7e7d8;
   opacity: 1;
@@ -137,12 +142,63 @@ h2 {
   color: #183b56;
 }
 
-.btn{
-  padding: 15px;
+.add {
+  width: 45px;
+  height: 45px;
+  margin-right: var(--inside-padding);
+  line-height: 45px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.btn {
+  padding: 12px;
+  margin-bottom: 5px;
+  vertical-align: top;
   font-size: large;
   border-radius: 5px;
   background-color: rgb(15, 165, 20);
   color: white;
   outline: none;
   border: 1px solid green;
+}
+
+/* data displaying */
+.data {
+  display: flex;
+  flex-direction: column;
+}
+.data-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  margin-top: 30px;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  height: 70px;
+}
+.dataItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  margin-top: 5px;
+  width: 80%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 20px;
+  opacity: 0.7;
+  height: 70px;
+}
+.delbtn {
+  padding: 7px;
+  background-color: red;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  outline: none;
+  opacity: 1;
+  color: white;
+  border-radius: 5px;
+}
+.file {
+  width: 100px;
 }
