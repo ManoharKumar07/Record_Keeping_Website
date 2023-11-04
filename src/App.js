@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
+
+import Field from "./components/Field";
 import "./App.css";
 import { useState } from "react";
 
@@ -13,11 +14,7 @@ function App() {
     setName("");
     setEmail("");
   };
-  const removeItem = (index) => {
-    let arr = data;
-    arr.splice(index, 1);
-    setData([...arr]);
-  };
+ 
   return (
     <>
       <div className="App">
@@ -69,26 +66,14 @@ function App() {
               <h3>Remove &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
             </div>
             {data.map((element, index) => {
-              return (
-                <div className="dataItem">
-                  <div className="file">
-                    <h4>{element.name}</h4>
-                  </div>
-                  <div className="file">
-                    <h4>{element.email}</h4>
-                  </div>
-                  <div className="file">
-                    <button
-                      className="delbtn"
-                      onClick={() => {
-                        removeItem(index);
-                      }}
-                    >
-                      <PersonRemoveIcon />
-                    </button>
-                  </div>
-                </div>
-              );
+             return(<Field
+              key={element.index}
+              name={element.name}
+              email={element.email}
+              index={element.index}
+              data={data}
+              setData={setData}
+             />)
             })}
           </div>
         </div>
